@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import psycopg2
-
+from time import time
 url_users = 'http://forum.lvivport.com/members/'
 url_themes = 'http://forum.lvivport.com/threads/'
 HEADERS = {
@@ -31,7 +31,7 @@ def get_html(url):
 
 
 def user():
-    for item in range(1, 101):
+    for item in range(1, 11):
         url = url_users+str(item)
         user_html = get_html(url)
         if user_html.status_code == 200:
@@ -122,7 +122,7 @@ def user():
 
 
 def message():
-    for item in range(1, 101):
+    for item in range(33678, 33689):
         url = url_themes+str(item)
         message_html = get_html(url)
         if message_html.status_code == 200:
@@ -150,5 +150,23 @@ def message():
             continue
 
 
+
 user()
 message()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
